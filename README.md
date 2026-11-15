@@ -1,57 +1,55 @@
-# Quantitative-Market-Analysis
+# Quantitative Risk & Multi-Sector Equity Research Portfolio
 
-[![Quantitative Market Analysis CI](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/tshepokotelo95-commits/Quantitative-Market-Analysis)
-[![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![CI Workflow](https://github.com/stefan931025-sys/portfolio-research/actions/workflows/ci.yml/badge.svg)
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-Market Data Analysis & Strategy: Applied Python (Pandas) and advanced time-series techniques to analyze market data and model ZAR/USD volatility. Developed a predictive model with strong out-of-sample accuracy, informing macro investment strategy.
+Central repository for quantitative and fundamental equity research. Features a hybrid GARCH LSTM volatility engine for time-series forecasting and an institutional-grade stock pitch for Nasdaq, Inc. (NDAQ) focused on SaaS-driven recurring revenue models and M&A synergy analysis.
 
----
+## 🚀 Executive Overview
 
-## Systematic Backtesting Architecture & Signal Mechanics
+This repository serves as a centralized, professional investment research showcase designed for buy-side recruitment. It contains an end-to-end framework combining rigorous quantitative risk/volatility engineering alongside highly structured fundamental long/short equity investment theses.
 
-This framework processes multi-asset historical price-action data to backtest alpha-generation parameters while strictly mitigating data-snooping and look-ahead biases.
-
-### 1. Cross-Sectional Data Ingestion
-The pipeline ingests raw OHLCV (Open, High, Low, Close, Volume) data arrays. Rather than executing simple moving average crossovers, the engine computes rolling statistical attributes:
-* **Volatility-Adjusted Spreads:** Utilizes True Range parameters to dynamically adjust execution entry thresholds based on structural market regimes.
-* **Volume Profiling:** Integrates price-at-volume distributions to isolate institutional liquidity nodes and dynamic support/resistance levels.
-
-### 2. Signal Execution & Parameter Backtesting
-Signals are systematically generated through cross-sectional parameter sweeps. The backtesting loop enforces strict institutional constraints:
-* **Transaction Cost Adjustments:** Integrates variable slippage models and fixed basis-point execution drag to reflect true market friction.
-* **Vectorized Backtesting Optimization:** Leverages vectorized arrays via NumPy and Pandas to simulate multi-year holding period returns over varying macroeconomic cycles, tracking Sharpe, Sortino, and Max Drawdown metrics.
+The underlying assets span multiple uncorrelated sectors, demonstrating an advanced capacity to evaluate risk parameters, software moats, free cash flow (FCF) conversion loops, and corporate capital allocation strategies.
 
 ---
 
-## Mathematical Specifications
+## 📊 1. Quantitative Modeling & Volatility Infrastructure
 
-### 1. True Range & Volatility Scaling
-$$\text{TR}_t = \max\left(H_t - L_t, \vert{}H_t - C_{t-1}\vert{}, \vert{}L_t - C_{t-1}\vert{}\right)$$
-$$\sigma_{t,\text{rolling}} = \sqrt{\frac{1}{n} \sum_{i=0}^{n-1} (R_{t-i} - \bar{R})^2}$$
-
-### 2. Sharpe Ratio Performance Metric
-$$\text{Sharpe} = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p}$$
+* **Core Framework:** Advanced macro scenario stress testing and daily implied volatility forecasting architecture.
+* **Objective:** Engineering dynamic systematic parameters to evaluate capital downside under high-VIX regimes, extreme macroeconomic shocks, and structural shifts in implied variance.
+* **Core Methodologies:** Hybrid GARCH(1,1) implementations, time-series data alignment, and forward-looking variance modeling to map out multi-scenario portfolio drawdowns.
 
 ---
 
-## System Architecture & Data Flow
+## 💡 2. Investment Research & Active Asset Pitches
+
+### Pitch #1: Nasdaq Inc. (NASDAQ: NDAQ)
+* **Strategy:** Secular Growth / Structural Pivot.
+* **Thesis:** Analyzing the long-term corporate transition away from highly cyclical, volume-dependent transactional matching engines into a premium-multiple, SaaS-driven recurring revenue model. Includes comprehensive segment analysis on software solutions, index licensing, and market technology.
+
+### Pitch #2: Palantir Technologies (NYSE: PLTR)
+* **Strategy:** Enterprise AI Monopolization & Commercial Scaling.
+* **Thesis:** Evaluation of AIP (Artificial Intelligence Platform) deployment velocity, government-to-commercial revenue diversification, and high operating leverage conversion through standardized ontology engineering.
+
+### Pitch #3: NVIDIA Corp. (NASDAQ: NVDA) & General Motors (NYSE: GM)
+* **Strategy:** Hardware Ecosystem Moats & Cyclical Capital Discipline.
+* **Thesis:** Evaluates semiconductor pricing power, accelerated computing dominance, and legacy automotive capital allocation strategies.
+
+---
+
+## 📁 Repository Structure
 
 ```text
-+-----------------------------------------------------------------------------------+
-|                         HISTORICAL OHLCV & ZAR/USD FEEDS                          |
-|                 (High-Frequency Multi-Asset Price & Volume Data)                  |
-+-----------------------------------------------------------------------------------+
-                                          |
-                                          v
-+-----------------------------------------------------------------------------------+
-|                     QUANTITATIVE BACKTESTING & SIGNAL ENGINE                      |
-|  * Rolling Volatility & ATR Normalization      * Cross-Sectional Parameter Sweeps |
-|  * Transaction Cost & Slippage Adjustments     * Vectorized Performance Metrics   |
-+-----------------------------------------------------------------------------------+
-                                          |
-                                          v
-+-----------------------------------------------------------------------------------+
-|                      STRATEGY EVALUATION & PERFORMANCE DESK                       |
-|           (Sharpe, Sortino, Max Drawdown, & Out-of-Sample Validation)             |
-+-----------------------------------------------------------------------------------+
+portfolio-research/
+├── .devcontainer/             # Devcontainer configuration for Codespaces
+├── .github/
+│   └── workflows/
+│       └── ci.yml             # GitHub Actions automated test workflow
+├── core/                      # Quantitative volatility & risk models
+├── tests/                     # Automated pytest suite
+├── pitches/                   # Institutional stock pitch Markdown memos & CSV models
+├── main.py                    # Main execution pipeline script
+├── repo_auditor.py            # Static AST analysis governance tool
+├── requirements.txt           # Python dependencies
+└── README.md                  # System documentation
